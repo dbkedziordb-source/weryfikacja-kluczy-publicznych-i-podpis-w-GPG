@@ -1,0 +1,1 @@
+# weryfikacja-kluczy-publicznych-i-podpis-w-GPG
