@@ -1,0 +1,20 @@
+Wyniki ćwiczenia – weryfikacja kluczy publicznych i podpisów GPG
+Test										Wynik GnuPG lub obserwacja								Co z tego wynika?
+Sprawdzenie przed importem klucza autora	Can't check signature: No public key					W profilu nie ma klucza publicznego autora, więc GnuPG nie może zweryfikować podpisu.
+Oryginał i właściwy klucz publiczny			Good signature											Podpis jest poprawny i dokument odpowiada treści, która została podpisana.
+Zmieniony dokument, ten sam podpis			BAD signature											Dokument został zmieniony, więc podpis nie pasuje już do jego treści.
+Ponowna weryfikacja oryginału				Good signature											Oryginalny dokument nie został zmieniony i podpis nadal jest poprawny.
+Porównanie pełnego odcisku klucza partnera  Odcisk zgodny z odciskiem przekazanym przez partnera	Potwierdziliśmy, że otrzymany klucz publiczny jest tym właściwym kluczem partnera.
+Odpowiedzi
+
+1. Dlaczego Good signature samo w sobie nie potwierdza tożsamości realnej osoby?
+
+Good signature potwierdza, że podpis pasuje do dokumentu i odpowiada użytemu kluczowi publicznemu. Nie potwierdza jednak, że właścicielem tego klucza jest rzeczywiście konkretna osoba.
+
+2. Czym różni się No public key od BAD signature?
+
+No public key oznacza, że GnuPG nie posiada potrzebnego klucza publicznego i dlatego nie może sprawdzić podpisu. BAD signature oznacza natomiast, że klucz publiczny jest dostępny, ale podpis nie pasuje do sprawdzanej treści, np. ponieważ dokument został zmieniony.
+
+3. Co zrobicie, jeśli pełny odcisk otrzymanego klucza różni się od odcisku potwierdzonego przez partnera?
+
+Zatrzymamy ćwiczenie i nie będziemy ufać otrzymanemu kluczowi. Sprawdzimy, czy przesłany został właściwy plik i ponownie porównamy pełny odcisk klucza z odciskiem przekazanym przez partnera innym sposobem.
